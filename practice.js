@@ -18,19 +18,55 @@
 }
 
 // write a func that returns the number of negative numbers in an array
-let arr1 = [1, -6, 59, -78, 90, -54, 44, -56, -53, 23];
-let arr2 = [1, -6, 59, -78, 0, 54, 44, 56, 8, 23];
-let arr3 = [1, -6, -9, -7, 90, -54, -44, 56, -53, 23];
+{
+    let arr1 = [1, -6, 59, -78, 90, -54, 44, -56, -53, 23];
+    let arr2 = [1, -6, 59, -78, 0, 54, 44, 56, 8, 23];
+    let arr3 = [1, -6, -9, -7, 90, -54, -44, 56, -53, 23];
 
-function countNegativeNums(arr) {
-    let count = 0; // Negaive counter
+    function countNegativeNums(arr) {
+        let count = 0; // Negaive counter
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                count++; // inc when the -ve num found
+            }
+        }
+        return count; // return the result
+    }
+    // console.log(countNegativeNums(arr1)); -> 5
+    // console.log(countNegativeNums(arr2)); -> 2
+    // console.log(countNegativeNums(arr3)); -> 6
+}
+
+// write a func that returns the largest number in array.
+// let arr1 = [16, 87, 6, 54, -90, 82, 54];
+// let arr2 = [1, 1, 1];
+// let arr3 = [0, 0, 0];
+function largestNumber(arr) {
+    let largestNum = - Infinity;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < 0) {
-            count++; // inc when the -ve num found
+        if (arr[i] > largestNum) {
+            largestNum = arr[i]
         }
     }
-    return count; // return the result
+    return largestNum;
 }
-// console.log(countNegativeNums(arr1)); -> 5
-// console.log(countNegativeNums(arr2)); -> 2
-// console.log(countNegativeNums(arr3)); -> 6
+// console.log(largestNumber(arr1)); -> 87
+// console.log(largestNumber(arr2)); -> 1
+// console.log(largestNumber(arr3)); -> 0
+
+// write a func that returns the smallest number in array.
+// let arr1 = [16, 87, 6, 54, -90, 82, 54];
+// let arr2 = [1, 1, 1];
+// let arr3 = [0, 0, 0];
+function smallestNumber(arr) {
+    let smallestNum = Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < smallestNum) {
+            smallestNum = arr[i]
+        }
+    }
+    return smallestNum;
+}
+// console.log(smallestNumber(arr1)); -> -90
+// console.log(smallestNumber(arr2)); -> 1
+// console.log(smallestNumber(arr3)); -> 0
