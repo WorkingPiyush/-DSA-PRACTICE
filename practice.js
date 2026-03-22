@@ -145,3 +145,220 @@
     }
     // console.log(reverseInt(102))
 }
+// star pattern NxN
+{
+    function starPatternNxN(n) {
+        for (let i = 0; i < n; i++) {
+            // this will be responsible for the row 
+            let str = ''
+            for (let j = 0; j < n; j++) {
+                // this will be responsible for the column 
+                str = str + " *"
+            }
+            console.log(str)
+        }
+    }
+    // starPatternNxN(4)
+    //  * * * *
+    //  * * * *
+    //  * * * *
+    //  * * * *
+    // starPatternNxN(4)
+    //  * * * * * * *
+    //  * * * * * * *
+    //  * * * * * * *
+    //  * * * * * * *
+    //  * * * * * * *
+    //  * * * * * * *
+    //  * * * * * * *
+}
+// star pattern Tree
+{
+    function starPatternTree(n) {
+        for (let i = 0; i < n; i++) {
+            // this will be responsible for the row 
+            let str = ''
+            for (let j = 0; j <= i; j++) {
+                // this will be responsible for the column 
+                str = str + " *"
+            }
+            console.log(str)
+        }
+    }
+    // starPatternTree(4)
+    //  *
+    //  * *
+    //  * * *
+    //  * * * *
+    // starPatternTree(7)
+    //  *
+    //  * *
+    //  * * *
+    //  * * * *
+    //  * * * * *
+    //  * * * * * *
+    //  * * * * * * *
+}
+// star pattern Tree Num
+{
+    function starPatternTreeNum(n) {
+        for (let i = 0; i < n; i++) {
+            // this will be responsible for the row 
+            let str = ''
+            for (let j = 0; j <= i; j++) {
+                // this will be responsible for the column 
+                str = str + (j + 1)
+            }
+            console.log(str)
+        }
+    }
+    // starPatternTreeNum(5)
+    // 1
+    // 12
+    // 123
+    // 1234
+    // 12345
+}
+// star pattern Num Tree
+{
+    function starPatternNumber(n) {
+        for (let i = 0; i < n; i++) {
+            // this will be responsible for the row 
+            let str = ''
+            for (let j = 0; j <= i; j++) {
+                // this will be responsible for the column 
+                str = str + (i + 1)
+            }
+            console.log(str)
+        }
+    }
+    // starPatternNumber(5)
+    // 1
+    // 22
+    // 333
+    // 4444
+    // 55555
+}
+// star pattern Number Reverse Tree
+{
+    function starPatterNumRev(n) {
+        for (let i = 0; i < n; i++) {
+            let space = '';
+            for (let j = 0; j < n - i; j++) {
+                space = space + (j + 1)
+            }
+            console.log(space)
+        }
+    }
+    // starPatterNumRev(5)
+    // 12345
+    // 1234
+    // 123
+    // 12
+    // 1
+    // starPatterNumRev(10)
+    // 12345678910
+    // 123456789
+    // 12345678
+    // 1234567
+    // 123456
+    // 12345
+    // 1234
+    // 123
+    // 12
+    // 1
+}
+// star pattern Str Reverse Tree
+{
+    function starPatterStrRev(n) {
+        for (let i = 0; i < n; i++) {
+            let str = '';
+            for (let j = 0; j < n - i; j++) {
+                str = str + ' *'
+            }
+            console.log(str)
+        }
+    }
+    // starPatterStrRev(5)
+    //  * * * * *
+    //  * * * *
+    //  * * *
+    //  * *
+    //  *
+    // starPatterStrRev(10)
+    //  * * * * * * * * * *
+    //  * * * * * * * * *
+    //  * * * * * * * *
+    //  * * * * * * *
+    //  * * * * * *
+    //  * * * * *
+    //  * * * *
+    //  * * *
+    //  * *
+    //  *
+}
+// star pattern one sidded pyramid
+{
+    function starPattern2(n) {
+        for (let i = 0; i < n; i++) {
+            let str = '';
+            for (let j = 0; j < n - (i + 1); j++) {
+                str = str + ' '
+            }
+            for (let k = 0; k < i + 1; k++) {
+                str = str + "*"
+            }
+            console.log(str)
+        }
+    }
+    // starPattern2(5)
+    //     *
+    //    **
+    //   ***
+    //  ****
+    // *****
+    // starPattern2(10)
+    //          *
+    //         **
+    //        ***
+    //       ****
+    //      *****
+    //     ******
+    //    *******
+    //   ********
+    //  *********
+    // **********
+}
+// pattern switch 1-0
+{
+
+    function oneZeroPattern(n) {
+        for (let i = 0; i < n; i++) {
+            let str = "";
+            let toggle = 1;
+            for (let j = 0; j <= i; j++) {
+                str = str + toggle;
+                if (toggle == 1) { toggle = 0 }
+                else { toggle = 1 }
+            }
+            console.log(str)
+        }
+    }
+    // oneZeroPattern(5)
+    // 1
+    // 10
+    // 101
+    // 1010
+    // 10101
+    // oneZeroPattern(10)
+    // 1
+    // 10
+    // 101
+    // 1010
+    // 10101
+    // 101010
+    // 1010101
+    // 10101010
+    // 101010101
+    // 1010101010
+}
