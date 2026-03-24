@@ -396,3 +396,26 @@
     }
     // console.log(removeElements(nums)); // 7
 }
+// reverse string in an array
+{
+    function reverseStringArr(arr) {
+        // length of input
+        let n = arr.length;
+        // halfing the length of arr with Math.floor so we get non-decimal num.
+        let halfN = Math.floor(n / 2);
+        for (let i = 0; i < halfN; i++) {
+            // storing the intial arr num in a temp variable so i can transfer the value.
+            // we are swapping arr[i] with arr[n-1-i]
+            let temp = arr[i]
+            arr[i] = arr[n - 1 - i];
+            arr[n - 1 - i] = temp;
+        }
+        // returning the reversed inplace arr. 
+        return arr;
+    }
+
+    // console.log(reverseStringArr(['P', 'i', 'y', 'u', 's', 'h', ' ', 'K', 'u', 'm', 'a', 'r']))
+    // ['r', 'a', 'm', 'u', 'K', ' ', 'h', 's', 'u', 'y', 'i', 'P']
+    // console.log(reverseStringArr(['r', 'a', 'j', 'a', 'j', 'j', 'a']))
+    // ['a', 'j', 'j', 'a', 'j', 'a', 'r']
+}
