@@ -362,3 +362,37 @@
     // 101010101
     // 1010101010
 }
+// remove duplicates
+{
+    let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+    // this will return no of unique elements in the nums arr;
+    function removeDuplicates(nums) {
+        let x = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] > nums[x]) {
+                x = x + 1;
+                nums[x] = nums[i];
+            }
+        }
+        return x + 1;
+    }
+    // console.log(removeDuplicates(nums)) // 5
+}
+// remove elements and return non-target nums
+{
+    let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+    function removeElements(nums) {
+        let x = 0;
+        let target = 1;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] !== target) {
+                // this condition only execute if the i != target for shifting the element it is nessary;
+                nums[x] = nums[i];
+                x = x + 1;
+            }
+        }
+        // this only returns the count of non-target nums in the array;
+        return x;
+    }
+    // console.log(removeElements(nums)); // 7
+}
