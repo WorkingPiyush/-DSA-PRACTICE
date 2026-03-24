@@ -419,3 +419,22 @@
     // console.log(reverseStringArr(['r', 'a', 'j', 'a', 'j', 'j', 'a']))
     // ['a', 'j', 'j', 'a', 'j', 'a', 'r']
 }
+// Best Time to Buy and Sell Stocks
+{
+    let time = [7, 1, 5, 3, 6, 4];
+    function bestTime(time) {
+        let minimum = time[0];
+        let maxProfit = 0;
+        for (let i = 1; i < time.length; i++) {
+            if (time[i] < minimum) {
+                minimum = time[i];
+            } if (time[i] - minimum > maxProfit) {
+                maxProfit = time[i] - minimum;
+            }
+        }
+        return { maxProfit, minimum };
+    }
+    const { maxProfit, minimum } = bestTime(time);
+    console.log("maxProfit: ", maxProfit, "minimum: ", minimum);
+    // maxProfit:  5 minimum: 1
+}
