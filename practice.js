@@ -434,7 +434,62 @@
         }
         return { maxProfit, minimum };
     }
-    const { maxProfit, minimum } = bestTime(time);
-    console.log("maxProfit: ", maxProfit, "minimum: ", minimum);
+    // const { maxProfit, minimum } = bestTime(time);
+    // console.log("maxProfit: ", maxProfit, "minimum: ", minimum);
     // maxProfit:  5 minimum: 1
+}
+// merge sorted array
+{
+    // #1 Brute Force method
+    function mergeSortArr0(num1, num2) {
+        return [...num1, ...num2].sort();
+    }
+    // console.log(mergeSortArr0([1, 2, 3], [2, 5, 6]));
+    // [ 1, 2, 2, 3, 5, 6 ]
+    //  #2 2nd Method
+    function mergeSortArr1(num1, m, num2, n) {
+        let p1 = 0; // pointer 1
+        let p2 = 0; // pointer 2
+        let num1Copy = num1.slice(0, m);
+        // sliciing the the num1 arr starting to the last num before 0.
+        for (let i = 0; i < m + n; i++) {
+            if (p2 >= n || (p1 < m && num1Copy[p1] < num2[p2])) {
+                // this block run if the p2 is >= num2 length or p1 is lesser then the length of num1 length and with that num1Copy[p1] < num2[p2].
+                num1[i] = num1Copy[p1];
+                p1++; // increase the pointer
+            } else {
+                num1[i] = num2[p2];
+                p2++; // increase the pointer
+            }
+        }
+        return num1;
+    }
+    let num1 = [1, 2, 3, 0, 0, 0];
+    let num2 = [2, 5, 6];
+    // console.log(mergeSortArr1(num1, 3, num2, 3))
+    // [1, 2, 2, 3, 5, 6]
+    //  #3 3rd Method
+
+    function mergeSortArr2(num1, m, num2, n) {
+        // reverse sorting
+        let p1 = m - 1; // last index
+        let p2 = n - 1; // last index
+        for (let i = m + n - 1; i >= 0; i--) {
+            if (p2 < 0) {
+                // if p2 goes below 0 then it breaks
+                break;
+            }
+            if (p1 >= 0 && num1[p1] > num2[p2]) {
+                // this block run if the p2 is >= 0 and also the num1[p1] > num2[p2].
+                num1[i] = num1[p1];
+                p1--; // decreasing the pointer
+            } else {
+                num1[i] = num2[p2];
+                p2--; // decreasing the pointer
+            }
+        }
+        return num1;
+    }
+    // console.log(mergeSortArr2(num1, 3, num2, 3))
+    // [ 1, 2, 2, 3, 5, 6 ]
 }
